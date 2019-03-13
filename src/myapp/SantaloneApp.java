@@ -32,7 +32,7 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
-public class App extends JFrame {
+public class SantaloneApp extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
@@ -91,7 +91,7 @@ public class App extends JFrame {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						App frame = new App();
+						SantaloneApp frame = new SantaloneApp();
 						frame.setVisible(true);
 					} catch (Exception e) {
 						System.out.println("An unexpected error has ocurred while loading the GUI :S");
@@ -155,7 +155,7 @@ public class App extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	private App() {
+	private SantaloneApp() {
 		setTitle("PwnedPasswordsChecker");
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
