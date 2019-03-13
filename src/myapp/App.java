@@ -42,7 +42,7 @@ public class App extends JFrame {
 	 * @return the hexadecimal representation of the password's hash.
 	 * @throws NoSuchAlgorithmException if the SHA-1 hashing algorithm could not be used.
 	 */
-	public static String calcHexSHA1(String password) throws NoSuchAlgorithmException {
+	private static String calcHexSHA1(String password) throws NoSuchAlgorithmException {
 		MessageDigest md = null;
 		md = MessageDigest.getInstance("SHA-1");
 		return DatatypeConverter.printHexBinary(md.digest(password.getBytes()));
@@ -118,7 +118,7 @@ public class App extends JFrame {
 	/**
 	 * Executes the needed procedures for the GUI interface to do it's thing.
 	 */
-	public void action() {
+	private void action() {
 		lblFinalResult.setForeground(new Color(255, 150, 0));
 		try {
 			lblFinalResult.setText("Checking...");
@@ -148,7 +148,7 @@ public class App extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public App() {
+	private App() {
 		setTitle("PwnedPasswordsChecker");
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
