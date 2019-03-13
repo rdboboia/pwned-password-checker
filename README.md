@@ -6,7 +6,7 @@ A quick implementation of a Java app that checks if a given password was leaked 
 
 ### About my implementation (disclaimer)
 Since my app is dependant of an external API, I didn't followed some well-known best practices on purpose. My goal was to make the implementation as fast and simple as possible. Another reason is that I wanted the entire app to be in only one file.
-However, I might consider a further update with a more modular and maintainable approach.
+However, I might consider a further update with a more modular and maintainable approach. Update: working on it! :D
 
 ### How it works
 The app can be called from the console or directly by executing the .jar which will launch the app with a GUI.
