@@ -17,3 +17,6 @@ The beauty of this approach is that neither the password nor its hash will be se
 
 ### External API used
 Have I Been Pwned API V2: https://haveibeenpwned.com/API/v2
+
+### Java
+Java 8 update 201 was used for development and testing.
