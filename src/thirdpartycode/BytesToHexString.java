@@ -14,10 +14,18 @@ package thirdpartycode;
  */
 
 public class BytesToHexString {
+	/**
+	 * Private constructor (no instances allowed).
+	 */
 	private BytesToHexString() {
-		// Private constructor
 	}
 	
+	
+	/**
+	 * Calculates the hexadecimal representation of the given bytes.
+	 * @param bytes the input bytes.
+	 * @return a String with the hexadecimal representation of the given bytes.
+	 */
 	// THIS CODE
 	public static String getHexString(byte[] bytes) {
 		final char[] hexArray = "0123456789ABCDEF".toCharArray();
