@@ -4,7 +4,7 @@
 ### Intro
 A quick implementation of a Java app that checks if a given password was leaked in the "haveibeenpwned" database. I uploaded an already compiled .jar if you just want to download and use the app.
 
-### About my implementation
+### About my implementation (disclaimer)
 Since my app is dependant of an external API, I didn't followed some well-known best practices on purpose. My goal was to make the implementation as fast and simple as possible. Another reason is that I wanted the entire app to be in only one file.
 However, I might consider a further update with a more modular and maintainable approach.
 
