@@ -5,7 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.xml.bind.DatatypeConverter;
+
+import thirdpartycode.BytesToHexString;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -13,6 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -45,7 +48,7 @@ public class App extends JFrame {
 	private static String calcHexSHA1(String password) throws NoSuchAlgorithmException {
 		MessageDigest md = null;
 		md = MessageDigest.getInstance("SHA-1");
-		return DatatypeConverter.printHexBinary(md.digest(password.getBytes()));
+		return BytesToHexString.getHexString(md.digest(password.getBytes()));
 	}
 	
 	
@@ -119,30 +122,34 @@ public class App extends JFrame {
 	 * Executes the needed procedures for the GUI interface to do it's thing.
 	 */
 	private void action() {
-		lblFinalResult.setForeground(new Color(255, 150, 0));
-		try {
-			lblFinalResult.setText("Checking...");
-			lblFinalResult.setVisible(true);
-			
-			String result = getHashRangeAndCompare(calcHexSHA1(new String(pwdField.getPassword())));
-			
-			if (result == null) {
-				lblFinalResult.setForeground(new Color(0, 175, 0));
-				lblFinalResult.setText("Congratulations! Your password was not found! :D");
-			} else {
-				lblFinalResult.setForeground(Color.RED);
-				lblFinalResult.setText("Your password was found " + result + " times! :(");
+		if (pwdField.getPassword().length > 0) {
+			lblFinalResult.setForeground(new Color(255, 150, 0));
+			try {
+				lblFinalResult.setText("Checking...");
+				lblFinalResult.setVisible(true);
+				
+				String result = getHashRangeAndCompare(calcHexSHA1(new String(pwdField.getPassword())));
+				
+				if (result == null) {
+					lblFinalResult.setForeground(new Color(0, 175, 0));
+					lblFinalResult.setText("Congratulations! Your password was not found! :D");
+				} else {
+					lblFinalResult.setForeground(Color.RED);
+					lblFinalResult.setText("Your password was found " + result + " times! :(");
+				}
+			} catch (NoSuchAlgorithmException e) {
+				lblFinalResult.setText("SHA-1 hashing algorithm could not be found! :(");
+			} catch (MalformedURLException e) {
+				lblFinalResult.setText("The URL has an unexpected format! :S");
+			} catch (IOException e) {
+				lblFinalResult.setText("An unexpected error has ocurred while processing the result :(");
 			}
-		} catch (NoSuchAlgorithmException e) {
-			lblFinalResult.setText("SHA-1 hashing algorithm could not be found! :(");
-		} catch (MalformedURLException e) {
-			lblFinalResult.setText("The URL has an unexpected format! :S");
-		} catch (IOException e) {
-			lblFinalResult.setText("An unexpected error has ocurred while processing the result :(");
+			
+			pwdField.setText(null);
+			Runtime.getRuntime().gc();
+		} else {
+			JOptionPane.showMessageDialog(this, "You should put something in ;)", "Fail", JOptionPane.WARNING_MESSAGE);
 		}
-		
-		pwdField.setText(null);
-		Runtime.getRuntime().gc();
 	}
 	
 	/**
