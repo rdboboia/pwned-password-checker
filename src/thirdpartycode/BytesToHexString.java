@@ -3,7 +3,7 @@ package thirdpartycode;
 /*
  * Copyright notice
  * 
- * This code was take from Stack Overflow. I do not own any right on it and this
+ * THIS CODE was take from Stack Overflow. I do not own any right on it and this
  * class is published under the same license as found in stack overflow, which
  * is the Creative Commons Attribution Share Alike license.
  * 
@@ -18,6 +18,7 @@ public class BytesToHexString {
 		// Private constructor
 	}
 	
+	// THIS CODE
 	public static String getHexString(byte[] bytes) {
 		final char[] hexArray = "0123456789ABCDEF".toCharArray();
 		char[] hexChars = new char[bytes.length * 2];
