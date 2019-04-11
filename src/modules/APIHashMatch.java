@@ -50,10 +50,11 @@ public class APIHashMatch {
 	
 	/**
 	 * Given the response of the API, it searches for the remaining hash characters.
-	 * @param the API's response stream.
+	 * @param inStream the API's response stream.
 	 * @param leftoverHexHashCars the remaining hash characters.
 	 * @return given the external API used and its response format, returns how many
-	 * times the password was leaked (based on its hash).
+	 * times the password was leaked (based on its hash). It may return a "-1" if
+	 * there was any error while parsing to {@code Integer}.
 	 * @throws IOException if an unexpected error occurs while reading the response.
 	 */
 	private static int fetchMatch(InputStream inStream, String leftoverHexHashCars) throws IOException {
@@ -62,7 +63,11 @@ public class APIHashMatch {
 		String line = in.readLine();
 		while (line != null) {
 			if (line.substring(0, 35).equals(leftoverHexHashCars)) {
-				return Integer.parseInt(line.substring(36));
+				try {
+					return Integer.parseInt(line.substring(36));
+				} catch (NumberFormatException e) {
+					return -1;
+				}
 			}
 			else
 				line = in.readLine();
