@@ -20,6 +20,7 @@ echo ===========================================================================
 
 echo.
 echo App finished.
+echo Return value: %errorlevel%
 echo.
 
 pause
