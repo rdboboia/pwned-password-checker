@@ -3,7 +3,7 @@ package modules;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import thirdpartycode.BytesToHexString;
+import converter.BytesToHexString;
 
 /**
  * Calculates the SHA-1 hash of the given String.
