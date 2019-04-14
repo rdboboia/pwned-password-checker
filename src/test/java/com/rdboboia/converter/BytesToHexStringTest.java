@@ -9,7 +9,7 @@ import org.junit.runners.MethodSorters;
 import com.rdboboia.converter.BytesToHexString;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class BytesToHexStringTests {
+public class BytesToHexStringTest {
 
 	byte[] bytes;
 	
