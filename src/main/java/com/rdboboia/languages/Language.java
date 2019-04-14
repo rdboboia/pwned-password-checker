@@ -1,4 +1,4 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * All the available languages. Current available languages:<br>

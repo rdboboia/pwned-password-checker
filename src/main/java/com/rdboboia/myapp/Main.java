@@ -1,9 +1,9 @@
-package myapp;
+package com.rdboboia.myapp;
 
-import languages.LanguageParser;
-import languages.Messages;
-import simpleapp.SimpleApp;
-import standalone.SantaloneApp;
+import com.rdboboia.languages.LanguageParser;
+import com.rdboboia.languages.Messages;
+import com.rdboboia.simpleapp.SimpleApp;
+import com.rdboboia.standalone.SantaloneApp;
 
 /**
  * The app's main.

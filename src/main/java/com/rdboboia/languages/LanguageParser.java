@@ -1,4 +1,4 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * A simple class with only one static method to parse a language from a
@@ -24,7 +24,7 @@ public class LanguageParser {
 	 */
 	public static Language parse(String language) {
 		String lang = language.toLowerCase();
-		if (lang.equals("spanish") || lang.equals("español") || lang.startsWith("esp"))
+		if (lang.equals("spanish") || lang.equals("espaï¿½ol") || lang.startsWith("esp"))
 			return Language.ESP;
 		else if (lang.equals("english") || lang.startsWith("eng"))
 			return Language.ENG;

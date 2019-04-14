@@ -1,4 +1,4 @@
-package standalone;
+package com.rdboboia.standalone;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import converter.BytesToHexString;
+import com.rdboboia.converter.BytesToHexString;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.swing.GroupLayout;

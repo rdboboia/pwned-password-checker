@@ -1,4 +1,4 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * Takes a {@link Language} and returns a new {@link Messages} instance which

@@ -1,4 +1,4 @@
-package converter;
+package com.rdboboia.converter;
 
 public class BytesToHexString {
 	/**

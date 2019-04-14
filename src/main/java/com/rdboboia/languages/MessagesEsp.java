@@ -1,4 +1,4 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * Spanish messages for the {@link Messages} class.
@@ -23,7 +23,7 @@ public class MessagesEsp implements Messages {
 	}
 
 	public String getTimesPasswordFound(int times) {
-		return "Tu contraseña se ha encontrado " + times + " veces.";
+		return "Tu password se ha encontrado " + times + " veces.";
 	}
 
 	public String getComputingHash() {

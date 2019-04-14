@@ -1,4 +1,4 @@
-package converter.test;
+package com.rdboboia.converter;
 
 import javax.swing.JOptionPane;
 
@@ -6,7 +6,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import converter.BytesToHexString;
+import com.rdboboia.converter.BytesToHexString;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BytesToHexStringTests {

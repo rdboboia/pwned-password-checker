@@ -1,9 +1,9 @@
-package modules;
+package com.rdboboia.modules;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import converter.BytesToHexString;
+import com.rdboboia.converter.BytesToHexString;
 
 /**
  * Calculates the SHA-1 hash of the given String.

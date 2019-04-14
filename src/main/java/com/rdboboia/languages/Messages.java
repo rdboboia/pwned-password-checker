@@ -1,4 +1,4 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * Defines all needed messages for the application with methods so that any class

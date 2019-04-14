@@ -1,15 +1,15 @@
-package simpleapp;
+package com.rdboboia.simpleapp;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.security.NoSuchAlgorithmException;
 
-import languages.Language;
-import languages.LanguageManager;
-import languages.LanguageParser;
-import languages.Messages;
-import modules.APIHashMatch;
-import modules.HashSHA1;
+import com.rdboboia.languages.Language;
+import com.rdboboia.languages.LanguageManager;
+import com.rdboboia.languages.LanguageParser;
+import com.rdboboia.languages.Messages;
+import com.rdboboia.modules.APIHashMatch;
+import com.rdboboia.modules.HashSHA1;
 
 /**
  * Main driver. It performs an one time check on the provided password and
@@ -41,7 +41,7 @@ public class SimpleApp {
 	 * @param password the password to be checked.
 	 * @param language the language of the console messages.
 	 */
-	public static void execute(String password, String language) {
+	public static String execute(String password, String language) {
 		// Language selection
 		Messages m;
 		Language lang = LanguageParser.parse(language);
@@ -68,20 +68,18 @@ public class SimpleApp {
 			// Printing result
 			System.out.println(m.getMatches(result));
 			if (result >= 0) {
-				System.exit(result);
-			} else {
-				System.out.println(m.getMakingRequestAndProcessingResponse());
+				return Integer.toString(result);
 			}
 		} catch (MalformedURLException e) {
-			System.out.println(m.getMalformedUrlExceptionMessage());
+			return m.getMalformedUrlExceptionMessage();
 		} catch (NoSuchAlgorithmException e) {
-			System.out.println(m.getSha1HashingAlgorithmNotFound());
+			return m.getSha1HashingAlgorithmNotFound();
 		} catch (IOException e) {
-			System.out.println(m.getUnexpectedIOException());
+			return m.getUnexpectedIOException();
 		}
 		
 		// Return -1 in case of any error.
-		System.exit(-1);
+		return "-1";
 	}
 	
 	/**

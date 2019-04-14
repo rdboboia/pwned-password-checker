@@ -1,51 +1,48 @@
-package languages;
+package com.rdboboia.languages;
 
 /**
  * English messages for the {@link Messages} class.
- * <br>
- * Made as a template to copy, paste and edit for easier implementation of a
- * new translation.
  * 
  * @author -$BOSS$-
  */
-public class MessagesTemplate implements Messages {
+public class MessagesEng implements Messages {
 	public String getMatches(int matches) {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Matches: " + matches;
 	}
 
 	public String getCongratulations() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Congratulations!";
 	}
 
 	public String getNoMatchesFound() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "No matches were found! :D";
 	}
 
 	public String getBadNews() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Bad news :(";
 	}
 
 	public String getTimesPasswordFound(int times) {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Your password was found " + times + " times.";
 	}
 
 	public String getComputingHash() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Computing hash...";
 	}
 
 	public String getMakingRequestAndProcessingResponse() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "Making request and processing response...";
 	}
 
 	public String getMalformedUrlExceptionMessage() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "The URL has an unexpected format! :S";
 	}
 
 	public String getSha1HashingAlgorithmNotFound() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "The SHA-1 hashing algorithm could not be found! :(";
 	}
 
 	public String getUnexpectedIOException() {
-		return Messages.MESSAGE_NOT_FOUND;
+		return "An unexpected I/O error ocurred while processing the response! :(";
 	}
 }
